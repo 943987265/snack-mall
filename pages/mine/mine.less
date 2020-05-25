@@ -1,0 +1,180 @@
+.m-show {
+    .m-user {
+        height: 200rpx;
+        padding: 40rpx;
+        box-sizing: border-box;
+        background: var(--themeColor);
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .m-info {
+            width: 300rpx;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            image {
+                width: 120rpx;
+                height: 120rpx;
+                border-radius: 50%;
+                box-shadow: 0 0 10rpx #333;
+            }
+        }
+    }
+
+    .m-address {
+        .m-readdr {
+            height: 100rpx;
+            text-align: center;
+            line-height: 100rpx;
+            color: #a96;
+            position: relative;
+            border-bottom: 1rpx solid #ccc;
+            box-sizing: border-box;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 25rpx;
+                height: 25rpx;
+                border-right: 5rpx solid #986;
+                border-bottom: 5rpx solid #986;
+                position: absolute;
+                right: 50rpx;
+                top: 50%;
+                transform: translateY(-50%) rotate(-45deg);
+            }
+        }
+
+        .m-addrInfo {
+            width: 90%;
+            display: flex;
+            flex-flow: column;
+            margin: 0 auto;
+
+            view {
+                height: 90rpx;
+                line-height: 90rpx;
+                color: #ccc;
+                font-size: 35rpx;
+                border-bottom: 1rpx solid #ddd;
+                box-sizing: border-box;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                &:last-of-type {
+                    border: none;
+                }
+
+                text {
+                    display: inline-block;
+                    width: 135rpx;
+                    text-align-last: justify;
+                }
+            }
+        }
+    }
+
+    .m-orders {
+        border-top: 30rpx solid #eee;
+        background: #eee;
+
+        .m-title {
+            height: 100rpx;
+            text-align: center;
+            line-height: 100rpx;
+            color: #a96;
+            border-bottom: 1rpx solid #ccc;
+            box-sizing: border-box;
+            background: #fff;
+        }
+
+        .m-items {
+            display: flex;
+            flex-flow: column;
+            margin: 0 auto 30rpx;
+            background: #fff;
+            padding: 0 37.5rpx;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            .m-number {
+                height: 90rpx;
+                line-height: 90rpx;
+                color: #999;
+                font-size: 35rpx;
+                border-bottom: 1rpx solid #ddd;
+                box-sizing: border-box;
+            }
+
+            .m-detail {
+                height: 200rpx;
+                border-bottom: 1rpx solid #eee;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .m-itemInfo {
+                    display: flex;
+                    align-items: center;
+
+                    image {
+                        width: 150rpx;
+                        height: 150rpx;
+                        margin-right: 20rpx;
+                    }
+
+                    text {
+                        color: #aaa;
+                        font-size: 35rpx;
+                    }
+                }
+
+                .m-donePay {
+                    color: #494;
+                    font-size: 35rpx;
+                }
+
+                .m-notPay {
+                    color: #f66;
+                    font-size: 35rpx;
+                }
+            }
+
+            .m-pay {
+                height: 100rpx;
+                font-size: 35rpx;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                button {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.m-login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-flow: column;
+
+    text {
+        color: #ccc;
+        font-size: 35rpx;
+    }
+
+    button {
+        margin: 20rpx;
+    }
+}

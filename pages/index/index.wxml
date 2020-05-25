@@ -1,0 +1,45 @@
+<!-- 轮播图——start -->
+<swiper autoplay circular indicator-dots interval="3000" duration="1000">
+	<swiper-item wx:for="{{bannerImg}}" wx:key="src">
+		<image src="{{item.src}}"></image>
+	</swiper-item>
+</swiper>
+<!-- 轮播图——end -->
+
+<!-- 精选——start -->
+<view class="chosen">
+	<view class="c-title">精选主题</view>
+  <!-- 主题区块——start -->
+  <!-- grid布局 -->
+  <!-- 点击跳转到主题页，传参=>require()的文件名 -->
+	<view class="c-themes">
+    <view class="c-fruits theme" bindtap="jumpToPages" data-pageurl="guowei">
+      <image src="/image/s1.png"></image>
+    </view>
+    <view class="c-newGoods theme" bindtap="jumpToPages" data-pageurl="dianxin">
+      <image src="/image/s2.png"></image>
+    </view>
+    <view class="c-nuts theme" bindtap="jumpToPages" data-pageurl="chaohuo">
+      <image src="/image/s3.png"></image>
+    </view>
+	</view>
+  <!-- 主题区块——end -->
+</view>
+<!-- 精选——end -->
+
+<!-- 新品——start -->
+<view class="newGoods">
+  <view class="n-title">最近新品</view>
+  <!-- 新品列表——start -->
+  <!-- flex布局 -->
+  <!-- 点击跳转到商品详情，传参=>具体商品的id -->
+  <view class="n-goods">
+    <view class="n-item" wx:for="{{newest}}" wx:key="id" bindtap="jumpToDetail" data-page="{{item.id}}">
+      <image src="{{item.imageUrl}}"></image>
+      <text>{{item.title}} {{item.count}}{{item.unit}}</text>
+      <text>￥{{item.price}}</text>
+    </view>
+  </view>
+  <!-- 新品列表——end -->
+</view>
+<!-- 新品——end -->

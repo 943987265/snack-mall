@@ -1,0 +1,63 @@
+<!-- 商品操作——start -->
+<view class="d-operations">
+  <!-- 购物车图标——start -->
+  <!-- 点击跳转到购物车页面 -->
+  <view class="d-cart" bindtap="jumpToCart">
+    <image src="/image/cart.png"></image>
+    <!-- 显示购物车商品数量 -->
+    <text>{{cartCount}}</text>
+  </view>
+  <!-- 购物车图标——end -->
+  <!-- 商品图片——start -->
+	<view class="d-img">
+		<image src="{{itemDetail.imageUrl}}"></image>
+	</view>
+  <!-- 商品图片——end -->
+  <!-- 商品操作——start -->
+	<view class="d-options">
+    <!-- 商品数量——start -->
+		<view class="d-count">
+      <!-- 减操作，当商品数量不大于1，则隐藏 -->
+			<text hidden="{{count <= 1}}" bindtap="reduce">-</text>
+      <!-- 商品总分量 -->
+			<text>数量 {{itemDetail.count * count}}{{itemDetail.unit}}</text>
+      <!-- 加操作 -->
+			<text bindtap="plus">+</text>
+		</view>
+    <!-- 商品数量——end -->
+    <!-- 加入购物车——start -->
+    <!-- 点击将商品加入购物车列表 -->
+    <view class="d-add" bindtap="addToCart">
+      <text>加入购物车</text>
+      <image src="/image/cart-o.png"></image>
+    </view>
+    <!-- 加入购物车——end -->
+	</view>
+  <!-- 商品操作——end -->
+  <!-- 商品相关信息——start -->
+  <view class="d-info">
+    <text>{{itemDetail.stock}}</text>
+    <text>{{itemDetail.title}}</text>
+    <text>￥{{itemDetail.price * count}}</text>
+  </view>
+  <!-- 商品相关信息——end -->
+</view>
+<!-- 商品操作——end -->
+
+<!-- 商品详情——start -->
+<view class="d-others">
+  <!-- 详情tab——start -->
+  <!-- 点击切换样式类，且切换内容模板 -->
+  <view class="d-tab">
+    <text class="{{tab === 'detail' ? 'd-active' : ''}}" bindtap="shiftTab" data-tab="detail">商品详情</text>
+    <text class="{{tab === 'parameter' ? 'd-active' : ''}}" bindtap="shiftTab" data-tab="parameter">产品参数</text>
+    <text class="{{tab === 'service' ? 'd-active' : ''}}" bindtap="shiftTab" data-tab="service">售后保障</text>
+  </view>
+  <!-- 详情tab——end -->
+  <!-- 详情内容——start -->
+  <view class="d-content">
+    <text>{{itemDetail[tab]}}</text>
+  </view>
+  <!-- 详情内容——end -->
+</view>
+<!-- 商品详情——end -->

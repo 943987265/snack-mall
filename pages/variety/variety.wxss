@@ -1,0 +1,64 @@
+page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.v-nav {
+  width: 150rpx;
+  height: 100%;
+  border-right: 1rpx solid #ccc;
+  text-align: center;
+}
+.v-nav .v-list {
+  margin: 40rpx 0;
+}
+.v-nav .v-list.v-active {
+  color: var(--themeColor);
+  border-left: 7rpx solid var(--themeColor);
+  border-right: 7rpx solid #0000;
+}
+.v-content {
+  width: 600rpx;
+  height: 100%;
+}
+.v-content swiper-item scroll-view {
+  height: 100%;
+}
+.v-content swiper-item scroll-view .v-banner {
+  margin: 50rpx 0 30rpx;
+  display: flex;
+  justify-content: center;
+}
+.v-content swiper-item scroll-view .v-banner image {
+  width: 524rpx;
+  height: 202rpx;
+}
+.v-content swiper-item scroll-view .v-title {
+  display: block;
+  text-align: center;
+  color: var(--themeColor);
+  font-size: 35rpx;
+}
+.v-content swiper-item scroll-view .v-goods {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  margin-top: 20rpx;
+  padding: 20rpx;
+}
+.v-content swiper-item scroll-view .v-goods .v-item {
+  width: 33.3%;
+  height: 160rpx;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx 0;
+}
+.v-content swiper-item scroll-view .v-goods .v-item image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.v-content swiper-item scroll-view .v-goods .v-item text {
+  font-size: 30rpx;
+}

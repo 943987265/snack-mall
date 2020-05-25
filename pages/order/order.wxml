@@ -1,0 +1,22 @@
+<!-- 订单编号——start -->
+<view class="o-code">订单编号：{{order.code}}</view>
+<!-- 订单编号——end -->
+
+<!-- 订单收货地址信息——start -->
+<view class="o-address">
+		<text>收货人: {{order.address.name}}</text>
+		<text>电话: {{order.address.phone}}</text>
+		<text>{{order.address.location}}</text>
+</view>
+<!-- 订单收货地址信息——end -->
+
+<!-- 订单商品列表——start -->
+<view class="o-list">
+	<!-- 根据当前订单的商品进行列表渲染 -->
+	<!-- 点击跳转到商品详情页 -->
+	<view class="o-item" wx:for="{{order.details}}" wx:key="id">
+		<image src="{{item.imageUrl}}" bindtap="jumpToDetail" data-page="{{item.id}}"></image>
+		<text decode>{{item.title}}\n￥{{item.price}}\n×{{item.quantity}}</text>
+	</view>
+</view>
+<!-- 订单商品列表——end -->

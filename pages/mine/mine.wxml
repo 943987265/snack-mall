@@ -1,0 +1,68 @@
+<!-- 已登录显示——start -->
+<view class="m-show" wx:if="{{ifLogin}}">
+	<!-- 用户信息——start -->
+	<view class="m-user">
+		<!-- 显示用户头像与昵称 -->
+		<view class="m-info">
+			<image src="{{userInfo.avatarUrl}}"></image>
+			<text>{{userInfo.nickName}}</text>
+		</view>
+		<!-- 点击进入设置页 -->
+		<view class="m-setting" bindtap="jumpToSet">设置</view>
+	</view>
+	<!-- 用户信息——end -->
+	<!-- 地址信息——start -->
+	<view class="m-address">
+		<!-- 点击进入地址填写页 -->
+		<view class="m-readdr" bindtap="jumpToAddr">地址管理</view>
+		<!-- 显示地址信息 -->
+		<view class="m-addrInfo" wx:if="{{address.name}}">
+			<view><text>收货人</text>: {{address.name}}</view>
+			<view><text>联系方式</text>: {{address.phone}}</view>
+			<view><text>详细地址</text>: {{address.location}}</view>
+		</view>
+	</view>
+	<!-- 地址信息——end -->
+	<!-- 订单——start -->
+	<view class="m-orders">
+		<view class="m-title">我的订单</view>
+		<!-- 每个订单——start -->
+		<!-- 根据本地存储的订单数据进行列表渲染 -->
+		<view class="m-items" wx:for="{{orders}}" wx:key="code">
+			<!-- 未付款的订单可长按订单编号提示删除 -->
+			<view class="m-number" bindlongtap="deleteOrder" 
+			data-if="{{!item.ifPay}}" data-idx="{{index}}">订单编号：{{item.code}}</view>
+			<!-- 订单商品——start -->
+			<!-- 根据订单中的商品信息进行列表渲染 -->
+			<view class="m-detail" wx:for="{{item.details}}" wx:for-item="detail" wx:key="id">
+				<view class="m-itemInfo">
+					<image src="{{detail.imageUrl}}"></image>
+					<text decode>{{detail.title}}\n{{detail.count}}{{detail.unit}}</text>
+				</view>
+				<!-- 根据订单付款页是否进行付款，显示付款状态 -->
+				<view class="{{item.ifPay ? 'm-donePay' : 'm-notPay'}}">{{item.ifPay ? '已付款' : '待付款'}}</view>
+			</view>
+			<!-- 订单商品——end -->
+			<!-- 订单操作——start -->
+			<view class="m-pay">
+				<text>实付：￥{{item.cost}}</text>
+				<!-- 根据订单付款页是否进行付款，显示付款或订单详情 -->
+				<button size="mini" type="warn" bindtap="orderOprt"
+				data-goto="{{item.ifPay}}" data-idx="{{index}}">{{item.ifPay ? '查看详情' : '付款'}}</button>
+			</view>
+			<!-- 订单操作——end -->
+		</view>
+		<!-- 每个订单——end -->
+	</view>
+	<!-- 订单——end -->
+</view>
+<!-- 已登录显示——end -->
+
+<!-- 未登录显示——start -->
+<!-- 点击获取用户信息，并将未登录状态更新为已登录状态 -->
+<view wx:else class="m-login">
+	<text>无权限，请登录</text>
+	<!-- 点击登录 -->
+	<button size="mini" type="warn" open-type="getUserInfo" bindgetuserinfo="login">登录</button>
+</view>
+<!-- 未登录显示——end -->

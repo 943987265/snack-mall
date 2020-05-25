@@ -1,0 +1,30 @@
+<!-- 收货地址信息——start -->
+<!-- 点击跳转到地址填写页 -->
+<view class="p-address" bindtap="jumpToAddr">
+	<!-- 曾填写地址信息时显示 -->
+	<block wx:if="{{address.name}}">
+		<text>收货人: {{address.name}}</text>
+		<text>电话: {{address.phone}}</text>
+		<text>{{address.location}}</text>
+	</block>
+	<!-- 未填写地址信息时显示 -->
+  <block wx:else>请设置配送信息</block>
+</view>
+<!-- 收货地址信息——end -->
+
+<!-- 购物车商品列表——start -->
+<view class="p-list">
+	<view class="p-item" wx:for="{{cartJson}}" wx:key="id">
+		<image src="{{item.imageUrl}}"></image>
+		<text decode>{{item.title}}\n￥{{item.price}}\n×{{item.quantity}}</text>
+	</view>
+</view>
+<!-- 购物车商品列表——end -->
+
+<!-- 付款相关——start -->
+<view class="p-pay">
+	<text class="p-cost">付款合计：￥{{cost}}</text>
+	<!-- 生成订单，并申请支付（判断条件） -->
+	<text class="p-order" bindtap="createOrder">去付款</text>
+</view>
+<!-- 付款相关——end -->

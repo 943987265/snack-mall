@@ -1,0 +1,152 @@
+.m-show .m-user {
+  height: 200rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+  background: var(--themeColor);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.m-show .m-user .m-info {
+  width: 300rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.m-show .m-user .m-info image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 10rpx #333;
+}
+.m-show .m-address .m-readdr {
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: #a96;
+  position: relative;
+  border-bottom: 1rpx solid #ccc;
+  box-sizing: border-box;
+}
+.m-show .m-address .m-readdr::after {
+  content: '';
+  display: block;
+  width: 25rpx;
+  height: 25rpx;
+  border-right: 5rpx solid #986;
+  border-bottom: 5rpx solid #986;
+  position: absolute;
+  right: 50rpx;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+.m-show .m-address .m-addrInfo {
+  width: 90%;
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+}
+.m-show .m-address .m-addrInfo view {
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #ccc;
+  font-size: 35rpx;
+  border-bottom: 1rpx solid #ddd;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.m-show .m-address .m-addrInfo view:last-of-type {
+  border: none;
+}
+.m-show .m-address .m-addrInfo view text {
+  display: inline-block;
+  width: 135rpx;
+  text-align-last: justify;
+}
+.m-show .m-orders {
+  border-top: 30rpx solid #eee;
+  background: #eee;
+}
+.m-show .m-orders .m-title {
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: #a96;
+  border-bottom: 1rpx solid #ccc;
+  box-sizing: border-box;
+  background: #fff;
+}
+.m-show .m-orders .m-items {
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto 30rpx;
+  background: #fff;
+  padding: 0 37.5rpx;
+}
+.m-show .m-orders .m-items:last-of-type {
+  margin-bottom: 0;
+}
+.m-show .m-orders .m-items .m-number {
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #999;
+  font-size: 35rpx;
+  border-bottom: 1rpx solid #ddd;
+  box-sizing: border-box;
+}
+.m-show .m-orders .m-items .m-detail {
+  height: 200rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.m-show .m-orders .m-items .m-detail .m-itemInfo {
+  display: flex;
+  align-items: center;
+}
+.m-show .m-orders .m-items .m-detail .m-itemInfo image {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+}
+.m-show .m-orders .m-items .m-detail .m-itemInfo text {
+  color: #aaa;
+  font-size: 35rpx;
+}
+.m-show .m-orders .m-items .m-detail .m-donePay {
+  color: #494;
+  font-size: 35rpx;
+}
+.m-show .m-orders .m-items .m-detail .m-notPay {
+  color: #f66;
+  font-size: 35rpx;
+}
+.m-show .m-orders .m-items .m-pay {
+  height: 100rpx;
+  font-size: 35rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.m-show .m-orders .m-items .m-pay button {
+  margin: 0;
+}
+.m-login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow: column;
+}
+.m-login text {
+  color: #ccc;
+  font-size: 35rpx;
+}
+.m-login button {
+  margin: 20rpx;
+}

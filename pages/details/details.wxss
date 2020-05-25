@@ -1,0 +1,108 @@
+page {
+  background: #eee;
+}
+.d-operations {
+  height: 900rpx;
+  background: #fff;
+  position: relative;
+}
+.d-operations .d-cart {
+  position: absolute;
+  top: 50rpx;
+  right: 50rpx;
+}
+.d-operations .d-cart image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.d-operations .d-cart text {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background: var(--themeColor);
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 40rpx;
+  position: absolute;
+  top: -10rpx;
+  left: -15rpx;
+}
+.d-operations .d-img {
+  height: 450rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.d-operations .d-img image {
+  width: 285rpx;
+  height: 285rpx;
+}
+.d-operations .d-options {
+  width: 660rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  background: var(--themeColor);
+  color: #fff;
+  font-size: 33rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40rpx auto;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+.d-operations .d-options .d-count {
+  width: 250rpx;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.d-operations .d-options .d-add {
+  width: 250rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.d-operations .d-options .d-add image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.d-operations .d-info {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.d-operations .d-info text {
+  font-size: 44rpx;
+  margin: 15rpx 0;
+}
+.d-operations .d-info text:first-of-type {
+  font-size: 33rpx;
+}
+.d-others {
+  background: #fff;
+  margin-top: 30rpx;
+}
+.d-others .d-tab {
+  height: 90rpx;
+  display: flex;
+  color: #999;
+  border-bottom: 1rpx solid #ccc;
+  box-sizing: border-box;
+}
+.d-others .d-tab text {
+  flex: 1;
+  text-align: center;
+  line-height: 90rpx;
+  height: 100%;
+  box-sizing: border-box;
+}
+.d-others .d-tab .d-active {
+  color: var(--themeColor);
+  border-bottom: 5rpx solid var(--themeColor);
+}
+.d-others .d-content {
+  padding: 50rpx;
+}

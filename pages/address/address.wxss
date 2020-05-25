@@ -1,0 +1,20 @@
+form {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
+form input {
+  height: 100rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 35rpx;
+  color: #aaa;
+}
+form .a-button {
+  display: flex;
+  justify-content: space-between;
+  margin: 30rpx auto;
+}
+form .a-button button {
+  width: 44%;
+  font-size: 35rpx;
+}

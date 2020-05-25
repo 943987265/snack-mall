@@ -1,0 +1,109 @@
+.c-main .c-item {
+  height: 250rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.c-main .c-item checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  border: 3rpx solid #666;
+  box-sizing: border-box;
+}
+.c-main .c-item checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #f66;
+  border: none;
+}
+.c-main .c-item checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 35rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.c-main .c-item .c-options {
+  width: 450rpx;
+  height: 80%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  font-size: 40rpx;
+}
+.c-main .c-item .c-options .c-info {
+  display: flex;
+  justify-content: space-between;
+}
+.c-main .c-item .c-options .c-deal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+}
+.c-main .c-item .c-options .c-deal .c-count {
+  width: 200rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 44rpx;
+}
+.c-main .c-item .c-options .c-deal .c-del {
+  font-size: 44rpx;
+}
+.c-footer {
+  width: 100%;
+  height: 100rpx;
+  background: var(--themeColor);
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.c-footer checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  border: 3rpx solid #fff;
+  box-sizing: border-box;
+}
+.c-footer checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #0000;
+}
+.c-footer checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 35rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.c-footer .c-cost {
+  width: 250rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.c-footer .c-cost text {
+  color: #fff;
+}
+.c-footer .c-cost image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.c-void {
+  color: #aaa;
+  position: absolute;
+  top: calc(50% - 50rpx);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

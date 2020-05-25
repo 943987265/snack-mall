@@ -1,0 +1,36 @@
+<!-- 导航条——start -->
+<view class="v-nav">
+	<!-- 根据data列表渲染 -->
+	<!-- 点击切换样式类 -->
+	<view wx:for="{{cateDetail}}" wx:key="id" class="v-list {{tab === item.id ? 'v-active' : ''}}" 
+	bindtap="changeTab" data-tab="{{item.id}}" data-idx="{{index}}">{{item.cate}}</view>
+</view>
+<!-- 导航条——end -->
+
+<!-- 分类内容——start -->
+<swiper class="v-content" vertical current="{{iNow}}">
+	<!-- 根据data列表渲染 -->
+	<swiper-item wx:for="{{cateDetail}}" wx:for-item="outter" wx:key="id"
+	catchtouchmove="stopTouchMove">
+		<!-- 设置可纵向滚动视图区域 -->
+		<scroll-view scroll-y>
+			<!-- 广告——start -->
+			<view class="v-banner">
+				<!-- 点击跳转到主题页——水果 -->
+				<image src="{{outter.banner}}" bindtap="jumpToPages"></image>
+			</view>
+			<!-- 广告——end -->
+			<text class="v-title" space="emsp">—— {{outter.cate}} ——</text>
+			<view class="v-goods">
+				<!-- 根据data列表渲染 -->
+				<!-- 点击跳转到商品详情页 -->
+				<view class="v-item" wx:for="{{outter.detail}}" wx:for-item="inner" wx:key="id" 
+				bindtap="jumpToDetail" data-page="{{inner.id}}">
+					<image src="{{inner.thumb}}"></image>
+					<text>{{inner.name}}</text>
+				</view>
+			</view>
+		</scroll-view>
+	</swiper-item>
+</swiper>
+<!-- 分类内容——end -->

@@ -1,0 +1,17 @@
+<!-- 主题图——start -->
+<view class="f-banner">
+	<image src="{{theme.bannerList[0]}}" mode="widthFix"></image>
+</view>
+<!-- 主题图——end -->
+
+<!-- 主题商品——start -->
+<view class="f-items">
+	<!-- 根据获取的data列表渲染 -->
+	<!-- 点击跳转到商品详情页 -->
+	<view class="f-item" wx:for="{{theme.shopList}}" wx:key="id" bindtap="jumpToDetail" data-page="{{item.id}}">
+		<image src="{{item.imageUrl}}"></image>
+		<text>{{item.title}} {{item.count}}{{item.unit}}</text>
+		<text>￥{{item.price}}</text>
+	</view>
+</view>
+<!-- 主题商品——end -->

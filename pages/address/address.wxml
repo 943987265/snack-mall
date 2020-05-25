@@ -1,0 +1,12 @@
+<!-- 地址填写与提交保存 -->
+<form bindsubmit="keepAddr">
+	<!-- 从未输入显示提示文字，曾输入显示历史信息 -->
+	<input name="name" value="{{address.name}}" placeholder="请输入姓名" placeholder-style="color:#ddd"></input>
+	<input name="phone" value="{{address.phone}}" placeholder="请输入手机号或座机号" placeholder-style="color:#ddd"></input>
+	<input name="location" value="{{address.location}}" placeholder="请输入详细地址" placeholder-style="color:#ddd"></input>
+	<!-- 定位操作与提交保存 -->
+	<view class="a-button">
+		<button bindtap="getLocation">定位</button>
+		<button formType="submit" type="primary">保存</button>
+	</view>
+</form>

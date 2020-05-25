@@ -1,0 +1,45 @@
+.o-code {
+  height: 90rpx;
+  padding: 0 40rpx;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #ccc;
+}
+.o-address {
+  height: 160rpx;
+  color: #aaa;
+  font-size: 35rpx;
+  padding: 20rpx 40rpx;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+.o-address text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.o-list {
+  border-top: 30rpx solid #eee;
+}
+.o-list .o-item {
+  height: 250rpx;
+  border-bottom: 1rpx solid #eee;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.o-list .o-item image {
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20rpx;
+}
+.o-list .o-item text {
+  line-height: 60rpx;
+}

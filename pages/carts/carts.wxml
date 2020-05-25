@@ -1,0 +1,65 @@
+<!-- 购物车主体——start -->
+<!-- 当已登录且添加了商品显示 -->
+<view class="c-main" wx:if="{{cartJson.length && ifLogin}}">
+	<!-- 添加的商品——start -->
+	<!-- 循环本地存储数据，显示添加商品信息与操作 -->
+	<view class="c-item" wx:for="{{cartJson}}" wx:key="id">
+		<!-- 多选框选择操作——start -->
+		<!-- 利用checkbox-group点击传参=>商品索引 -->
+		<checkbox-group bindchange="recalc" data-idx="{{index}}">
+			<!-- 当全选或单选时选中 -->
+			<checkbox color="#f66" value="{{index}}" checked="{{ifAll || item.checked}}"></checkbox>
+		</checkbox-group>
+		<!-- 多选框选择操作——end -->
+		<!-- 商品信息与操作——start -->
+		<view class="c-options">
+			<!-- 商品信息——start -->
+			<view class="c-info">
+				<text>{{item.title}} {{item.count}}{{item.unit}}</text>
+				<text>￥{{item.price}}</text>
+			</view>
+			<!-- 商品信息——end -->
+			<!-- 商品操作——start -->
+			<view class="c-deal">
+				<!-- 商品数量——start -->
+				<!-- 点击- +改变数量操作，传参=>商品索引 -->
+				<view class="c-count">
+					<text bindtap="recalc" data-oprt="reduce" data-idx="{{index}}">-</text>
+					<text>{{item.quantity}}</text>
+					<text bindtap="recalc" data-oprt="plus" data-idx="{{index}}">+</text>
+				</view>
+				<!-- 商品数量——end -->
+				<!-- 商品删除——start -->
+				<!-- 点击x删除操作，传参=>商品索引 -->
+				<view class="c-del" bindtap="recalc" data-oprt="delete" data-idx="{{index}}">×</view>
+				<!-- 商品删除——end -->
+			</view>
+			<!-- 商品操作——end -->
+		</view>
+		<!-- 商品信息与操作——end -->
+	</view>
+	<!-- 添加的商品——end -->
+</view>
+<!-- 当已登录且未添加商品显示 -->
+<view class="c-void" wx:elif="{{ifLogin}}">购物车为空</view>
+<!-- 当未登录显示 -->
+<view class="c-void" wx:else>请先登录</view>
+<!-- 购物车主体——end -->
+
+<!-- 底部——start -->
+<view class="c-footer">
+	<!-- 全选——start -->
+	<checkbox-group id="c-all" bindchange="recalc">
+		<checkbox color="transparent" value="all" checked="{{ifAll && cartJson.length}}"></checkbox>
+	</checkbox-group>
+	<!-- 全选——end -->
+	<!-- 支付相关——start -->
+	<view class="c-cost">
+		<!-- 订单总价 -->
+		<text>￥{{allCost}}</text>
+		<!-- 支付页跳转（判断条件） -->
+		<image src="/image/icon3.png" bindtap="pay"></image>
+	</view>
+	<!-- 支付相关——end -->
+</view>
+<!-- 底部——end -->

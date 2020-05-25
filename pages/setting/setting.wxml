@@ -1,0 +1,11 @@
+<!-- 选项（假动作）——start -->
+<view class="s-list">
+  <text>清除缓存</text>
+  <text>客服中心</text>
+  <text>关于我们</text>
+  <text>帮助与反馈</text>
+</view>
+<!-- 选项（假动作）——end -->
+<!-- 退出登录——start -->
+<button type="warn" bindtap="exitLogin">退出登录</button>
+<!-- 退出登录——end -->
