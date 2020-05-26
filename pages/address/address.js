@@ -4,6 +4,10 @@ Page({
     address: wx.getStorageSync('address') || {}
   },
 
+  textIn: function (e) {
+    this.data.address[e.currentTarget.dataset.type] = e.detail.value
+  },
+
   getLocation: function (e) {
     wx.getLocation({
       type: "gcj02",
@@ -13,7 +17,7 @@ Page({
           longitude: res.longitude,
           success: (result) => {
             this.data.address.location = result.address;
-            wx.setStorageSync('address', this.data.address)
+            wx.setStorageSync('address', this.data.address);
           }
         })
       }
